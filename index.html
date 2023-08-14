@@ -22,6 +22,11 @@
             font-size: 18px;
         }
     </style>
+        <script>
+            if (window.location.protocol === "http:") {
+                window.location.href = "https://" + window.location.host + window.location.pathname;
+            }
+        </script>
 </head>
 <body>
     <h1>Welcome to ProgStick</h1>
