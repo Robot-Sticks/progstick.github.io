@@ -1,34 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#000000" />
-  <meta name="description" content="A nice looking serial terminal in the web. Open-Source, free, and easy to use." />
-  <meta name="keywords" content="Web Serial, Serial Terminal, Serial Monitor, Spacehuhn" />
-  <meta name="author" content="Spacehuhn" />
-  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-  <link rel="icon" href="%PUBLIC_URL%/logo512.png" />
-  <link rel="stylesheet" href="%PUBLIC_URL%/fonts/fonts.css" />
-  <title>Spacehuhn Serial Terminal</title>
+    <title>ProgStick Serial</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+        }
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
 </head>
-
 <body>
-  <noscript>You need to enable JavaScript to run this app.</noscript>
-  <div id="root"></div>
-  <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
-
-  <script defer data-domain="serial.huhn.me" src="https://plausible.io/js/plausible.js"></script>
+    <iframe src="https://serial-red.vercel.app/" frameborder="0"></iframe>
 </body>
-
 </html>
