@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Firmware Flash Test</title>
+</head>
+
+<body>
+
+  <button id="flash">Flash Firmware</button>
+
+  <script>
+  
+    const flashButton = document.getElementById('flash');
+
+    flashButton.addEventListener('click', async () => {
+
+      // Busca porta serial
+      const ports = await navigator.serial.getPorts();
+      const port = ports[0]; 
+
+      // Abre porta
+      const controller = new AbortController();
+      const signal = controller.signal;  
+      const reader = await port.open({
+        baudRate: 115200, 
+        signal  
+      });
+      
+      // Faz fetch do firmware
+      const response = await fetch('http://compile.progstick.com/compile/compile3/uploads/code/build/code.ino.bin');
+      const firmware = await response.arrayBuffer();
+      
+      // Converte para ArrayBuffer
+      const encoder = new TextEncoder();
+      const fwBuffer = encoder.encode(firmware);
+      
+      // Escreve na serial  
+      await reader.write(fwBuffer);
+      
+      // Fecha porta
+      await reader.close();
+
+      console.log('Firmware flashed!');
+
+    });
+
+  </script>
+
+</body>
+</html>
