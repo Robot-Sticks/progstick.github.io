@@ -6,42 +6,34 @@
 
 <body>
 
+  <input type="file" id="firmware-file">
+
   <button id="flash">Flash Firmware</button>
 
   <script>
-  
-    const flashButton = document.getElementById('flash');
 
-    flashButton.addEventListener('click', async () => {
+    const input = document.getElementById('firmware-file');
+    const flashBtn = document.getElementById('flash');
 
-      // Busca porta serial
-      const ports = await navigator.serial.getPorts();
-      const port = ports[0]; 
+    flashBtn.addEventListener('click', async () => {
+    
+      // Lê arquivo selecionado  
+      const file = input.files[0];
+      const reader = new FileReader();
+      reader.readAsArrayBuffer(file);
 
-      // Abre porta
-      const controller = new AbortController();
-      const signal = controller.signal;  
-      const reader = await port.open({
-        baudRate: 115200, 
-        signal  
-      });
+      reader.onload = async () => {
+        
+        // Firmware carregado
+        const firmware = reader.result;
+        
+        // Código para gravar firmware na serial
+        // Abre porta 
+        // Escreve dados
+        // Fecha porta
+        
+      };
       
-      // Faz fetch do firmware
-      const response = await fetch('http://compile.progstick.com/compile/compile3/uploads/code/build/code.ino.bin');
-      const firmware = await response.arrayBuffer();
-      
-      // Converte para ArrayBuffer
-      const encoder = new TextEncoder();
-      const fwBuffer = encoder.encode(firmware);
-      
-      // Escreve na serial  
-      await reader.write(fwBuffer);
-      
-      // Fecha porta
-      await reader.close();
-
-      console.log('Firmware flashed!');
-
     });
 
   </script>
