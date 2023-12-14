@@ -3,6 +3,12 @@
 <head>
     <title>ProgStick</title>
     <style>
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
     button {
         background-color: #4CAF50; /* Green */
         border: none;
@@ -14,11 +20,15 @@
         font-size: 16px;
         margin: 4px 2px;
         cursor: pointer;
+        transition: transform .2s; /* Animation */
+    }
+    button:hover {
+        transform: scale(1.1); /* Zoom in */
     }
     </style>
 </head>
 <body>
-    <button onclick="copyToClipboard('https://www.progstick.com/')">Copy URL</button>
+    <button onclick="copyToClipboard('https://progstick.com/library/arduino/install.json')">Click for copy for Arduino Library</button>
 
     <script>
     function copyToClipboard(text) {
@@ -29,6 +39,7 @@
         tempInput.select();
         document.execCommand("copy");
         document.body.removeChild(tempInput);
+        alert("URL copied to clipboard!");
     }
     </script>
 </body>
