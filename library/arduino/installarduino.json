@@ -1,25 +1,25 @@
 {
     "packages": [
       {
-        "name": "ProgStick",
-        "websiteURL": "https://www.progstick.com/",
-        "maintainer": "Progstick",
-        "email": "info@progstick.com",
+        "name": "WCH",
+        "websiteURL": "https://www.wch.cn/",
+        "maintainer": "WCH",
+        "email": "tech@wch.cn",
         "help": {
-          "online": "https://www.progstick.com"
+          "online": "https://www.wch.cn/"
         },
         "platforms": [
           {
-            "name": "ProgStick",
+            "name": "CH32 MCU EVT Boards",
             "architecture": "ch32v",
             "version": "1.0.3",
             "category": "Contributed",
-            "url": "https://progstick.com/library/arduino/core_ch32/",
-            "archiveFileName": "1.0.3.zip",
+            "url": "https://codeload.github.com/openwch/arduino_core_ch32/zip/refs/tags/1.0.3",
+            "archiveFileName": "arduino_core_ch32-1.0.3.zip",
             "checksum": "SHA-256:233B4DC7D1930BBE93FC0F00964ADFC24DDC012585121D113F98CEF8652A1362",
             "size": "964954",
             "boards": [		
-              {"name": "ProgStick"}
+              {"name": "CH32V00x EVT Board"}
             ],
             "toolsDependencies": [
               {
