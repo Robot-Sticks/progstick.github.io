@@ -1,0 +1,71 @@
+{
+    "packages": [
+      {
+        "name": "ProgStick",
+        "websiteURL": "https://www.progstick.com/",
+        "maintainer": "Progstick",
+        "email": "info@progstick.com",
+        "help": {
+          "online": "https://www.progstick.com"
+        },
+        "platforms": [
+          {
+            "name": "ProgStick",
+            "architecture": "ch32v",
+            "version": "1.0.3",
+            "category": "Contributed",
+            "url": "https://progstick.com/library/arduino/core_ch32/",
+            "archiveFileName": "1.0.3.zip",
+            "checksum": "SHA-256:233B4DC7D1930BBE93FC0F00964ADFC24DDC012585121D113F98CEF8652A1362",
+            "size": "964954",
+            "boards": [		
+              {"name": "ProgStick"}
+            ],
+            "toolsDependencies": [
+              {
+                "packager": "WCH",
+                "name": "riscv-none-embed-gcc",
+                "version": "8.2.0"
+              },
+              {
+                "packager": "WCH",
+                "name": "openocd",
+                "version": "1.0.0"
+              }
+            ]
+          }		
+        ],
+        "tools": [
+          {
+            "name": "riscv-none-embed-gcc",
+            "version": "8.2.0",
+            "systems":
+            [
+              {
+                "host": "i686-mingw32",
+                "url": "https://codeload.github.com/openwch/risc-none-embed-gcc/zip/refs/tags/8.2.0",
+                "archiveFileName": "risc-none-embed-gcc-8.2.0.zip",
+                "checksum": "SHA-256:43DF880A1908C873A8B6AB115568C6BEAEEC41DDADEB5202703B6AA9FDE50626",
+                "size": "267710516"
+              }
+            ]
+          },
+          {
+            "name": "openocd",
+            "version": "1.0.0",
+            "systems":
+            [
+              {
+                "host": "i686-mingw32",
+                "url": "https://codeload.github.com/openwch/openocd_wch/zip/refs/tags/1.0.0",
+                "archiveFileName": "openocd_wch-1.0.0.zip",
+                "checksum": "SHA-256:F1E54FD7F253CF37E7F4581088FF62DFDFDAB899B9D3182C36426F6146AE0465",
+                "size": "9604774"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+  
